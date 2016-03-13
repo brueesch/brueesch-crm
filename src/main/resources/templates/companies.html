@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Companies</title>
+</head>
+<body>
+<h1>Companies</h1>
+<div th:each="company : ${companies}">
+    <div>
+        <b th:text="${company.id}">ID</b> -
+        <span th:text="${company.companyName}">Company Name</span>
+    </div>
+</div>
+</body>
+</html>
