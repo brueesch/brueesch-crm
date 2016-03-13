@@ -12,7 +12,8 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
 
 jar {
 	baseName = 'brueesch-crm'
@@ -32,6 +33,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-remote-shell')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile("org.springframework.boot:spring-boot-devtools")
 	compile('com.vaadin:vaadin-spring-boot-starter:1.0.0')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('com.h2database:h2')
