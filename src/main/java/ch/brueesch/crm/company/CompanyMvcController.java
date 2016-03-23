@@ -1,4 +1,4 @@
-package ch.brueesch.crm.client.company;
+package ch.brueesch.crm.company;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

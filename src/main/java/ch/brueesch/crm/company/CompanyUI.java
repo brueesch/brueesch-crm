@@ -1,4 +1,4 @@
-package ch.brueesch.crm.client.company;
+package ch.brueesch.crm.company;
 
 
 import com.vaadin.annotations.Theme;

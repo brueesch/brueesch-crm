@@ -1,4 +1,4 @@
-package ch.brueesch.crm.client.company;
+package ch.brueesch.crm.company;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
