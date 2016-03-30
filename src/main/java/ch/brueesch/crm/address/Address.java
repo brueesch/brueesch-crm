@@ -1,4 +1,4 @@
-package ch.brueesch.crm.util;
+package ch.brueesch.crm.address;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
