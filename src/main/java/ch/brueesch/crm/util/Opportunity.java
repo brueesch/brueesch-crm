@@ -6,6 +6,7 @@ import ch.brueesch.crm.user.User;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -15,10 +16,12 @@ public class Opportunity {
     @GeneratedValue
     private Long id;
 
+    @OneToOne
     private Company client;
 
     private String description;
 
+    @OneToOne
     private Contact contact;
 
     private OpportunityImportance opportunityImportance;
@@ -27,6 +30,7 @@ public class Opportunity {
 
     private LocalDate decisionDate;
 
+    @OneToOne
     private User asignee;
 
     private List<Note> note;

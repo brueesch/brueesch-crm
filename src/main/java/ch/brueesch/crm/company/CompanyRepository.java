@@ -10,5 +10,5 @@ import java.util.Collection;
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
     @RestResource( path = "by-name", rel = "by-name")
-    Collection<Company> findByCompanyName(String companyName);
+    Collection<Company> findByName(String name);
 }

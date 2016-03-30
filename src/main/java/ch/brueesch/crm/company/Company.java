@@ -2,9 +2,7 @@ package ch.brueesch.crm.company;
 
 import ch.brueesch.crm.util.Address;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Company {
@@ -15,6 +13,7 @@ public class Company {
 
     private String name;
 
+    @ManyToOne
     private Address address;
 
     private String phoneNumber;

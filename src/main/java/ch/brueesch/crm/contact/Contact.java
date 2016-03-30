@@ -5,9 +5,7 @@ import ch.brueesch.crm.util.Address;
 import ch.brueesch.crm.util.ContactSalutation;
 import ch.brueesch.crm.util.Note;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -28,14 +26,17 @@ public class Contact {
 
     private String eMail;
 
+    @ManyToOne
     private Address address;
 
     private String phoneNumber;
 
     private String mobileNumber;
 
+    @OneToMany
     private List<Note> notes;
 
+    @ManyToOne
     private Company company;
 
     public Contact() {

@@ -2,9 +2,7 @@ package ch.brueesch.crm.util;
 
 import ch.brueesch.crm.user.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -18,6 +16,7 @@ public class Note {
 
     private LocalDate date;
 
+    @ManyToOne
     private User user;
 
     public Note() {
