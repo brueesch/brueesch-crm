@@ -1,7 +1,7 @@
 package ch.brueesch.crm.contact;
 
 import ch.brueesch.crm.company.Company;
-import ch.brueesch.crm.util.Address;
+import ch.brueesch.crm.address.Address;
 import ch.brueesch.crm.util.ContactSalutation;
 import ch.brueesch.crm.util.Note;
 

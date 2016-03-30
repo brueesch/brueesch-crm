@@ -1,6 +1,6 @@
 package ch.brueesch.crm.company;
 
-import ch.brueesch.crm.util.Address;
+import ch.brueesch.crm.address.Address;
 
 import javax.persistence.*;
 
