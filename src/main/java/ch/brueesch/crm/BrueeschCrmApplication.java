@@ -1,5 +1,7 @@
 package ch.brueesch.crm;
 
+import ch.brueesch.crm.address.Address;
+import ch.brueesch.crm.address.AddressRepository;
 import ch.brueesch.crm.company.Company;
 import ch.brueesch.crm.company.CompanyRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -18,20 +20,26 @@ public class BrueeschCrmApplication {
         SpringApplication.run(BrueeschCrmApplication.class, args);
     }
 
-//
-//    @Bean
-//    public CommandLineRunner runner(final CompanyRepository companyRepository) {
-//        return args -> Stream.of("Confinale", "UBS", "Vontobel", "Credit Suisse", "ZKB", "GKB")
-//                .forEach(name -> companyRepository.save(new Company().setName(name)));
-//    }
-//
-//    @Bean
-//    public HealthIndicator customHealthIndicator() {
-//        return new HealthIndicator() {
-//            @Override
-//            public Health health() {
-//                return Health.status("I <3 Java!").build();
-//            }
-//        };
-//    }
+
+    @Bean
+    public CommandLineRunner runner(final CompanyRepository companyRepository) {
+        return args -> Stream.of("Confinale", "UBS", "Vontobel", "Credit Suisse", "ZKB", "GKB")
+                .forEach(name -> companyRepository.save(new Company().setName(name)));
+    }
+
+    @Bean
+    public CommandLineRunner runner2(final AddressRepository addressRepositoryRepository) {
+        return args -> Stream.of("Zürich", "Bern", "Chur", "Tschiertschen", "St.Gallen", "Winterthur")
+                .forEach(name -> addressRepositoryRepository.save(new Address().setCity(name)));
+    }
+
+    @Bean
+    public HealthIndicator customHealthIndicator() {
+        return new HealthIndicator() {
+            @Override
+            public Health health() {
+                return Health.status("I <3 Java!").build();
+            }
+        };
+    }
 }
