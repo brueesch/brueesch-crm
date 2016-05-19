@@ -36,6 +36,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
 	compile('com.vaadin:vaadin-spring-boot-starter:1.0.0')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.webjars:bootstrap:3.3.6')
+	compile('org.webjars:jquery:2.2.3')
+
+
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
