@@ -23,7 +23,8 @@ public class BrueeschCrmApplication {
 
     @Bean
     public CommandLineRunner runner(final CompanyRepository companyRepository) {
-        return args -> Stream.of("Confinale", "UBS", "Vontobel", "Credit Suisse", "ZKB", "GKB")
+        return args -> Stream.of("Bank of America", "JPMorgan Chase", "Barclays", "Japan Post Bank", "BNP Paribas", "Mitsubishi UFJ Financial Group", "Deutsche Bank",
+                "Crédit Agricole", "HSBC Holdings", "Industrial & Commercial Bank of China", "UBS", "Vontobel", "Credit Suisse", "ZKB", "GKB", "Postfinance")
                 .forEach(name -> companyRepository.save(new Company().setName(name)));
     }
 
