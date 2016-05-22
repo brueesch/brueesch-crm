@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ContactController {
+public class ContactsController {
 
     private final ContactRepository contactRepository;
 
     @Autowired
-    public ContactController(ContactRepository contactRepository) {
+    public ContactsController(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
 

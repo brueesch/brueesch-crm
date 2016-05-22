@@ -6,6 +6,8 @@ import ch.brueesch.crm.company.Company;
 import ch.brueesch.crm.company.CompanyRepository;
 import ch.brueesch.crm.contact.Contact;
 import ch.brueesch.crm.contact.ContactRepository;
+import ch.brueesch.crm.opportunity.Opportunity;
+import ch.brueesch.crm.opportunity.OpportunityRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.health.Health;
@@ -41,6 +43,13 @@ public class BrueeschCrmApplication {
         return args -> Stream.of("Tom Cruise", "Johnny Depp", "Tom Hanks", "Jack Nicholson", "Leonardo DiCaprio", "Robert Downey Jr.", "Clint Eastwood",
                 "Will Smith", "Angelina Jolie", "Jennifer Aniston", "Scarlett Johansson", "Natalie Portman", "Charlize Theron", "Jennifer Lawrence", "Jessica Alba", "Megan Fox")
                 .forEach(name -> contactRepository.save(new Contact().setFirstName(name)));
+    }
+
+    @Bean
+    public CommandLineRunner runner4(final OpportunityRepository opportunityRepository) {
+        return args -> Stream.of("CTR-Bank of America", "CTR-JPMorgan Chase", "CTR-Barclays", "CTR-Japan Post Bank", "CTR-BNP Paribas", "CTR-Mitsubishi UFJ Financial Group", "CTR-Deutsche Bank",
+                "CTR-Crédit Agricole", "CTR-HSBC Holdings", "CTR-Industrial & Commercial Bank of China", "CTR-UBS", "CTR-Vontobel", "CTR-Credit Suisse", "CTR-ZKB", "CTR-GKB", "CTR-Postfinance")
+                .forEach(name -> opportunityRepository.save(new Opportunity().setDescription(name)));
     }
 
     @Bean

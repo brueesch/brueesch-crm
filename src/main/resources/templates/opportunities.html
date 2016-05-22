@@ -123,13 +123,13 @@
                     <i class="icon-angle-right"></i>
                 </li>
                 <li>
-                    <a href="companies.html">Companies</a>
+                    <a href="opportunities.html">Opportunities</a>
                 </li>
             </ul>
 
             <div class="box span11">
                 <div class="box-header" data-original-title="">
-                    <h2><i class="halflings-icon white briefcase"></i><span class="break"></span>Companies</h2>
+                    <h2><i class="halflings-icon white pencil"></i><span class="break"></span>Opportunities</h2>
                     <div class="box-icon">
                         <a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
                         <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -153,11 +153,11 @@
                                 </th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
                                     rowspan="1" colspan="1" aria-label="Number of Contacts: activate to sort column ascending"
-                                    style="width: 192px;">Number of Contacts
+                                    style="width: 192px;">Something Awesome
                                 </th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
                                     rowspan="1" colspan="1" aria-label="Number of Opportunities: activate to sort column ascending"
-                                    style="width: 204px;">Number of Opportunities
+                                    style="width: 204px;">Something else Awesome
                                 </th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
                                     rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending"
@@ -167,9 +167,9 @@
                             </thead>
 
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <tr class="odd" th:each="company : ${companies}">
-                                <td class="sorting_1" th:text="${company.id}"></td>
-                                <td class="sorting_1" th:text="${company.name}"></td>
+                            <tr class="odd" th:each="opportunity : ${opportunities}">
+                                <td class="sorting_1" th:text="${opportunity.id}"></td>
+                                <td class="sorting_1" th:text="${opportunity.description}"></td>
                                 <td class="center">99</td>
                                 <td class="center">99</td>
                                 <td class="center ">

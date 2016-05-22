@@ -1,15 +1,15 @@
-package ch.brueesch.crm.util;
+package ch.brueesch.crm.opportunity;
 
 import ch.brueesch.crm.company.Company;
 import ch.brueesch.crm.contact.Contact;
 import ch.brueesch.crm.user.User;
+import ch.brueesch.crm.util.Note;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
 public class Opportunity {
 
     @Id
@@ -31,8 +31,9 @@ public class Opportunity {
     private LocalDate decisionDate;
 
     @OneToOne
-    private User asignee;
+    private User assignee;
 
+    @OneToMany
     private List<Note> note;
 
     private OpportunityStatus status;
@@ -104,12 +105,12 @@ public class Opportunity {
         return this;
     }
 
-    public User getAsignee() {
-        return asignee;
+    public User getAssignee() {
+        return assignee;
     }
 
-    public Opportunity setAsignee(User asignee) {
-        this.asignee = asignee;
+    public Opportunity setAssignee(User assignee) {
+        this.assignee = assignee;
         return this;
     }
 

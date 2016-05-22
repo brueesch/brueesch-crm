@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class CompanyController {
+public class CompaniesController {
 
     private final CompanyRepository companyRepository;
 
     @Autowired
-    public CompanyController(CompanyRepository companyRepository) {
+    public CompaniesController(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
     }
 
