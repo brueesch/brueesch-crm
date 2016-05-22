@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class AddressController {
+public class AddressesController {
 
     private final AddressRepository addressRepository;
 
     @Autowired
-    public AddressController(AddressRepository addressRepository) {
+    public AddressesController(AddressRepository addressRepository) {
         this.addressRepository = addressRepository;
     }
 

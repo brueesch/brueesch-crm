@@ -1,4 +1,4 @@
-package ch.brueesch.crm.util;
+package ch.brueesch.crm.opportunity;
 
 public enum OpportunityImportance {
     HIGH("High"),
