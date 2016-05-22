@@ -17,7 +17,7 @@ public class AddressController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/addresses")
-    public String renderCompanies(Model model) {
+    public String renderAddresses(Model model) {
         model.addAttribute("addresses", addressRepository.findAll());
         return "addresses";
     }
