@@ -4,6 +4,8 @@ import ch.brueesch.crm.address.Address;
 import ch.brueesch.crm.address.AddressRepository;
 import ch.brueesch.crm.company.Company;
 import ch.brueesch.crm.company.CompanyRepository;
+import ch.brueesch.crm.contact.Contact;
+import ch.brueesch.crm.contact.ContactRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.health.Health;
@@ -32,6 +34,13 @@ public class BrueeschCrmApplication {
     public CommandLineRunner runner2(final AddressRepository addressRepositoryRepository) {
         return args -> Stream.of("Zürich", "Bern", "Chur", "Tschiertschen", "St.Gallen", "Winterthur")
                 .forEach(name -> addressRepositoryRepository.save(new Address().setCity(name)));
+    }
+
+    @Bean
+    public CommandLineRunner runner3(final ContactRepository contactRepository) {
+        return args -> Stream.of("Tom Cruise", "Johnny Depp", "Tom Hanks", "Jack Nicholson", "Leonardo DiCaprio", "Robert Downey Jr.", "Clint Eastwood",
+                "Will Smith", "Angelina Jolie", "Jennifer Aniston", "Scarlett Johansson", "Natalie Portman", "Charlize Theron", "Jennifer Lawrence", "Jessica Alba", "Megan Fox")
+                .forEach(name -> contactRepository.save(new Contact().setFirstName(name)));
     }
 
     @Bean
