@@ -5,6 +5,7 @@ import ch.brueesch.crm.opportunity.OpportunityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,9 +23,9 @@ public class CompanyController {
         this.opportunityRepository = opportunityRepository;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/company")
-    public String renderCompanies(Model model) {
-        model.addAttribute("company", companyRepository.getOne(1l));
+    @RequestMapping(method = RequestMethod.GET, value = "/company/{id}")
+    public String renderCompany(Model model, @PathVariable Long id) {
+        model.addAttribute("company", companyRepository.getOne(id));
         model.addAttribute("contacts", contactRepository.findAll());
         model.addAttribute("opportunities", opportunityRepository.findAll());
         return "company";
