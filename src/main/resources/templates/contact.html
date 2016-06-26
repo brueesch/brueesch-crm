@@ -14,12 +14,12 @@
     <!-- end: Mobile Specific -->
 
     <!-- start: CSS -->
-    <link id="bootstrap-style" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}"
+    <link id="bootstrap-style" href="../static/css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}"
           rel="stylesheet"/>
-    <link href="../static/css/bootstrap-responsive.min.css" th:href="@{css/bootstrap-responsive.min.css}"
+    <link href="../static/css/bootstrap-responsive.min.css" th:href="@{../css/bootstrap-responsive.min.css}"
           rel="stylesheet"/>
-    <link id="base-style" href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet"/>
-    <link id="base-style-responsive" href="../static/css/style-responsive.css" th:href="@{css/style-responsive.css}"
+    <link id="base-style" href="../static/css/style.css" th:href="@{../css/style.css}" rel="stylesheet"/>
+    <link id="base-style-responsive" href="../static/css/style-responsive.css" th:href="@{../css/style-responsive.css}"
           rel="stylesheet"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset;=latin,cyrillic-ext,latin-ext'
           rel='stylesheet' type='text/css'/>
@@ -29,15 +29,15 @@
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link id="ie-style" href="../static/css/ie.css" th:href="@{css/ie.css}" rel="stylesheet"/>
+    <link id="ie-style" href="../static/css/ie.css" th:href="@{../css/ie.css}" rel="stylesheet"/>
     <![endif]-->
 
     <!--[if IE 9]>
-    <link id="ie9style" href="../static/css/ie9.css" th:href="@{css/ie9.css}" rel="stylesheet"/>
+    <link id="ie9style" href="../static/css/ie9.css" th:href="@{../css/ie9.css}" rel="stylesheet"/>
     <![endif]-->
 
     <!-- start: Favicon -->
-    <link rel="shortcut icon" href="../static/img/favicon.ico" th:href="@{img/favicon.ico}"/>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" th:href="@{../img/favicon.ico}"/>
     <!-- end: Favicon -->
 
 
@@ -93,12 +93,12 @@
                 <ul class="nav nav-tabs nav-stacked main-menu">
                     <li><a href="/"><i class="icon-home"></i><span class="hidden-tablet"> Home</span></a>
                     </li>
-                    <li><a href="companies.html"><i class="icon-briefcase"></i><span
+                    <li><a href="../companies.html"><i class="icon-briefcase"></i><span
                             class="hidden-tablet"> Companies</span></a></li>
-                    <li><a href="contacts.html"><i class="icon-group"></i><span
+                    <li><a href="../contacts.html"><i class="icon-group"></i><span
                             class="hidden-tablet"> Contacts</span></a>
                     </li>
-                    <li><a href="opportunities.html"><i class="icon-pencil"></i><span
+                    <li><a href="../opportunities.html"><i class="icon-pencil"></i><span
                             class="hidden-tablet"> Opportunities</span></a></li>
                 </ul>
             </div>
@@ -123,13 +123,31 @@
                     <i class="icon-angle-right"></i>
                 </li>
                 <li>
-                    <a href="contacts.html">Contacts</a>
+                    <a href="../contacts.html">Contacts</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
                 </li>
             </ul>
 
+
+            <h1 class="span5" th:text="${contact.firstName}"></h1>
+            <img src="../static/img/bankOfAmericaLogo.svg" th:src="@{../img/bankOfAmericaLogo.svg}" class="img-responsive span3 pull-right" alt="Company Logo"/>
+
+
+            <address th:inline="text" class="span5 ">
+                Wallstreet 32<br/>
+                Seond Street<br/>
+                98273 New York<br/>
+                United States of America<br/><br/>
+                Phone: +1 (505) 12 34 <br/>
+                <a href="mailto:Here Comes a email address">bank.of@america.com</a>
+            </address>
+
             <div class="box span11">
                 <div class="box-header" data-original-title="">
-                    <h2><i class="halflings-icon white user"></i><span class="break"></span>Contacts</h2>
+                    <h2><i class="halflings-icon white pencil"></i><span class="break"></span>Opportunities</h2>
                     <div class="box-icon">
                         <a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
                         <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -152,8 +170,12 @@
                                     style="width: 345px;">Name
                                 </th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
+                                    rowspan="1" colspan="1" aria-label="Number of Contacts: activate to sort column ascending"
+                                    style="width: 192px;">Something Awesome
+                                </th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
                                     rowspan="1" colspan="1" aria-label="Number of Opportunities: activate to sort column ascending"
-                                    style="width: 204px;">Number of Opportunities
+                                    style="width: 204px;">Something else Awesome
                                 </th>
                                 <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0"
                                     rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending"
@@ -163,12 +185,13 @@
                             </thead>
 
                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                            <tr class="odd" th:each="contact : ${contacts}">
-                                <td class="sorting_1" th:text="${contact.id}"></td>
-                                <td class="sorting_1" th:text="${contact.firstName}"></td>
+                            <tr class="odd" th:each="opportunity : ${opportunities}">
+                                <td class="sorting_1" th:text="${opportunity.id}"></td>
+                                <td class="sorting_1" th:text="${opportunity.description}"></td>
+                                <td class="center">99</td>
                                 <td class="center">99</td>
                                 <td class="center ">
-                                    <a class="btn btn-success" th:href="@{contact/{id}(id=${contact.id})}">
+                                    <a class="btn btn-success" href="#">
                                         <i class="halflings-icon white zoom-in"></i>
                                     </a>
                                     <a class="btn btn-info" href="#">
@@ -184,6 +207,14 @@
                     </div>
                 </div>
             </div>
+
+            <!--<address>-->
+            <!--<strong></strong><br>-->
+            <!--1355 Market Street, Suite 900<br />-->
+            <!--San Francisco, CA 94103<br />-->
+            <!--<abbr title="Phone">P:</abbr> (123) 456-7890-->
+            <!--</address>-->
+
 
         </div><!--/.fluid-container-->
 
@@ -229,60 +260,60 @@
 
 <!-- start: JavaScript-->
 
-<script src="../static/js/jquery-1.9.1.min.js" th:src="@{js/jquery-1.9.1.min.js}"></script>
-<script src="../static/js/jquery-migrate-1.0.0.min.js" th:src="@{js/jquery-migrate-1.0.0.min.js}"></script>
+<script src="../static/js/jquery-1.9.1.min.js" th:src="@{../js/jquery-1.9.1.min.js}"></script>
+<script src="../static/js/jquery-migrate-1.0.0.min.js" th:src="@{../js/jquery-migrate-1.0.0.min.js}"></script>
 
-<script src="../static/js/jquery-ui-1.10.0.custom.min.js" th:src="@{js/jquery-ui-1.10.0.custom.min.js}"></script>
+<script src="../static/js/jquery-ui-1.10.0.custom.min.js" th:src="@{../js/jquery-ui-1.10.0.custom.min.js}"></script>
 
-<script src="../static/js/jquery.ui.touch-punch.js" th:src="@{js/jquery.ui.touch-punch.js}"></script>
+<script src="../static/js/jquery.ui.touch-punch.js" th:src="@{../js/jquery.ui.touch-punch.js}"></script>
 
-<script src="../static/js/modernizr.js" th:src="@{js/modernizr.js}"></script>
+<script src="../static/js/modernizr.js" th:src="@{../js/modernizr.js}"></script>
 
-<script src="../static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
+<script src="../static/js/bootstrap.min.js" th:src="@{../js/bootstrap.min.js}"></script>
 
-<script src="../static/js/jquery.cookie.js" th:src="@{js/jquery.cookie.js}"></script>
+<script src="../static/js/jquery.cookie.js" th:src="@{../js/jquery.cookie.js}"></script>
 
-<script src='../static/js/fullcalendar.min.js' th:src="@{js/fullcalendar.min.js}"></script>
+<script src='../static/js/fullcalendar.min.js' th:src="@{../js/fullcalendar.min.js}"></script>
 
-<script src='../static/js/jquery.dataTables.min.js' th:src="@{js/jquery.dataTables.min.js}"></script>
+<script src='../static/js/jquery.dataTables.min.js' th:src="@{../js/jquery.dataTables.min.js}"></script>
 
-<script src="../static/js/excanvas.js" th:src="@{js/excanvas.js}"></script>
-<script src="../static/js/jquery.flot.js" th:src="@{js/jquery.flot.js}"></script>
-<script src="../static/js/jquery.flot.pie.js" th:src="@{js/jquery.flot.pie.js}"></script>
-<script src="../static/js/jquery.flot.stack.js" th:src="@{js/jquery.flot.stack.js}"></script>
-<script src="../static/js/jquery.flot.resize.min.js" th:src="@{js/jquery.flot.resize.min.js}"></script>
+<script src="../static/js/excanvas.js" th:src="@{../js/excanvas.js}"></script>
+<script src="../static/js/jquery.flot.js" th:src="@{../js/jquery.flot.js}"></script>
+<script src="../static/js/jquery.flot.pie.js" th:src="@{../js/jquery.flot.pie.js}"></script>
+<script src="../static/js/jquery.flot.stack.js" th:src="@{../js/jquery.flot.stack.js}"></script>
+<script src="../static/js/jquery.flot.resize.min.js" th:src="@{../js/jquery.flot.resize.min.js}"></script>
 
-<script src="../static/js/jquery.chosen.min.js" th:src="@{js/jquery.chosen.min.js}"></script>
+<script src="../static/js/jquery.chosen.min.js" th:src="@{../js/jquery.chosen.min.js}"></script>
 
-<script src="../static/js/jquery.uniform.min.js" th:src="@{js/jquery.uniform.min.js}"></script>
+<script src="../static/js/jquery.uniform.min.js" th:src="@{../js/jquery.uniform.min.js}"></script>
 
-<script src="../static/js/jquery.cleditor.min.js" th:src="@{js/jquery.cleditor.min.js}"></script>
+<script src="../static/js/jquery.cleditor.min.js" th:src="@{../js/jquery.cleditor.min.js}"></script>
 
-<script src="../static/js/jquery.noty.js" th:src="@{js/jquery.noty.js}"></script>
+<script src="../static/js/jquery.noty.js" th:src="@{../js/jquery.noty.js}"></script>
 
-<script src="../static/js/jquery.elfinder.min.js" th:src="@{js/jquery.elfinder.min.js}"></script>
+<script src="../static/js/jquery.elfinder.min.js" th:src="@{../js/jquery.elfinder.min.js}"></script>
 
-<script src="../static/js/jquery.raty.min.js" th:src="@{js/jquery.raty.min.js}"></script>
+<script src="../static/js/jquery.raty.min.js" th:src="@{../js/jquery.raty.min.js}"></script>
 
-<script src="../static/js/jquery.iphone.toggle.js" th:src="@{js/jquery.iphone.toggle.js}"></script>
+<script src="../static/js/jquery.iphone.toggle.js" th:src="@{../js/jquery.iphone.toggle.js}"></script>
 
-<script src="../static/js/jquery.uploadify-3.1.min.js" th:src="@{js/jquery.uploadify-3.1.min.js}"></script>
+<script src="../static/js/jquery.uploadify-3.1.min.js" th:src="@{../js/jquery.uploadify-3.1.min.js}"></script>
 
-<script src="../static/js/jquery.gritter.min.js" th:src="@{js/jquery.gritter.min.js}"></script>
+<script src="../static/js/jquery.gritter.min.js" th:src="@{../js/jquery.gritter.min.js}"></script>
 
-<script src="../static/js/jquery.imagesloaded.js" th:src="@{js/jquery.imagesloaded.js}"></script>
+<script src="../static/js/jquery.imagesloaded.js" th:src="@{../js/jquery.imagesloaded.js}"></script>
 
-<script src="../static/js/jquery.masonry.min.js" th:src="@{js/jquery.masonry.min.js}"></script>
+<script src="../static/js/jquery.masonry.min.js" th:src="@{../js/jquery.masonry.min.js}"></script>
 
-<script src="../static/js/jquery.knob.modified.js" th:src="@{js/jquery.knob.modified.js}"></script>
+<script src="../static/js/jquery.knob.modified.js" th:src="@{../js/jquery.knob.modified.js}"></script>
 
-<script src="../static/js/jquery.sparkline.min.js" th:src="@{js/jquery.sparkline.min.js}"></script>
+<script src="../static/js/jquery.sparkline.min.js" th:src="@{../js/jquery.sparkline.min.js}"></script>
 
-<script src="../static/js/counter.js" th:src="@{js/counter.js}"></script>
+<script src="../static/js/counter.js" th:src="@{../js/counter.js}"></script>
 
-<script src="../static/js/retina.js" th:src="@{js/retina.js}"></script>
+<script src="../static/js/retina.js" th:src="@{../js/retina.js}"></script>
 
-<script src="../static/js/custom.js" th:src="@{js/custom.js}"></script>
+<script src="../static/js/custom.js" th:src="@{../js/custom.js}"></script>
 <!-- end: JavaScript-->
 
 </body>
